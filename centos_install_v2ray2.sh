@@ -467,8 +467,8 @@ server {
 }
 EOF
 
-    startNginx
-    systemctl start v2ray
+    systemctl restart nginx
+    systemctl enable nginx
     
     sleep 3
     res=`netstat -nltp | grep ${PORT} | grep nginx`
